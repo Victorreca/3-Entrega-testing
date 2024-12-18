@@ -112,7 +112,7 @@ describe('Function "moviesAverageOfDirector"', () => {
     expect(moviesAverageOfDirector(movies, 'Stanley Kubrick')).not.toBeNaN();
   });
 
-  it(' should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
+  it('should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
     expect(
       moviesAverageOfDirector(
         [
@@ -298,9 +298,53 @@ describe('Function "orderByYear"', () => {
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
   });
+
+  it('should return a number', () => {
+    expect(typeof moviesAverageByCategory(movies, 'Crime')).toBe('number');
+  });
+
+  it('should be different from NaN', () => {
+    expect(moviesAverageByCategory(movies, 'Crime')).not.toBeNaN();
+  });
+
+  it('should return the average score of movies selecting only the genre.', () => {
+    expect(
+      moviesAverageByCategory(
+        [
+          {
+            title: 'Paths of Glory',
+            year: 1957,
+            director: 'Stanley Kubrick',
+            duration: '1h 28min',
+            genre: ['Drama', 'War'],
+            score: 8.6
+          },
+          {
+            title: 'Django Unchained',
+            year: 2012,
+            director: 'Quentin Tarantino',
+            duration: '2h 45min',
+            genre: ['Drama', 'Western'],
+            score: 8.4
+          },
+          {
+            title: 'Pulp Fiction',
+            year: 1994,
+            director: 'Quentin Tarantino',
+            duration: '2h 34min',
+            genre: ['Crime'],
+            score: 8.9
+          }
+        ],
+        'Drama'
+      )
+    ).toBe(8.5);
+  });
+
+  // nota mitjana de les pel·lícules d'un determinat gènere.
 });
 
 // Exercise 7

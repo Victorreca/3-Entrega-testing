@@ -31,18 +31,32 @@ const orderAlphabetically = (array) => {
 
 // Exercise 5: Order by year, ascending
 const orderByYear = (array) => {
+  let elementOrdered;
   const arrayOrdered = [...array].sort((a, b) => {
-    if (a.year === b.year) {
-      return a.title.localeCompare(b.title);
-    } else {
-      return a.year - b.year;
-    }
+    a.year === b.year
+      ? (elementOrdered = a.title.localeCompare(b.title))
+      : (elementOrdered = a.year - b.year);
+    return elementOrdered;
   });
   return arrayOrdered;
 };
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {}
+const moviesAverageByCategory = (movies, genre) => {
+  const filteredMoviesGenre = movies.filter((movie) =>
+    movie.genre.includes(genre)
+  );
+
+  if (filteredMoviesGenre.length === 0) {
+    return 0;
+  }
+  const totalScore = filteredMoviesGenre.reduce(
+    (total, movie) => total + movie.score,
+    0
+  );
+  const averageScoreByCategory = totalScore / filteredMoviesGenre.length;
+  return averageScoreByCategory;
+};
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {}
