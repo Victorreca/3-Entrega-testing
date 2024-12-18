@@ -6,7 +6,8 @@ const getAllDirectors = (array) => {
 };
 
 // Exercise 2: Get the films of a certain director
-function getMoviesFromDirector(array, director) {}
+const getMoviesFromDirector = (array, director) =>
+  array.filter((element) => element.director === director);
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {}
