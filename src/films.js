@@ -63,14 +63,12 @@ const hoursToMinutes = (array) => {
   const arrayToMinutes = array.map((element) => {
     const durationMinutes = element.duration.split(' ');
     let totalMinutes = 0;
-
     if (durationMinutes[0].includes('h')) {
       totalMinutes += parseInt(durationMinutes[0]) * 60;
     }
     if (durationMinutes[1] && durationMinutes[1].includes('min')) {
       totalMinutes += parseInt(durationMinutes[1]);
     }
-
     return {
       ...element,
       duration: totalMinutes
@@ -80,7 +78,13 @@ const hoursToMinutes = (array) => {
 };
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+const bestFilmOfYear = (array, year) => {
+  const filterArrayByYear = array.filter((element) => element.year === year);
+  const bestFilmOfYear = filterArrayByYear.reduce((a, b) =>
+    a.score > b.score ? a : b
+  );
+  return [bestFilmOfYear];
+};
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
