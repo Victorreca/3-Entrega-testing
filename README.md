@@ -26,7 +26,7 @@ git clone https://github.com/Victorreca/3-Entrega-testing
 **✔️ Paso 2:** Ingresa al directorio del proyecto:
 
 ```bash
-cd starter-code-frontend-sprint-3-movies
+cd 3-Entrega-testing
 ```
 
 **✔️ Paso 3:** Instala las dependencias:
